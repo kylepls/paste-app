@@ -1,0 +1,8 @@
+{
+    "host": "host",
+    "port": "27017",
+    "data": "text",
+    "user": "admin",
+    "pass": "pass",
+    "seqdata": "counter"
+}

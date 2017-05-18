@@ -1,0 +1,65 @@
+body {
+    margin: 0px !important;
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+#editor {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Sorry Hastebin <3 */
+#actions {
+    background-color: #2D2D2D;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: +1000;
+    padding: 10px;
+}
+
+.option {
+    display: block;
+}
+
+.tab {
+    color: #8F908A;
+    margin: 10px;
+    font-size: 15px;
+}
+
+.tab:hover {
+    color: #039be5;
+}
+
+#find {
+    position: absolute;
+    display: none;
+    width: 20vw;
+    height: 10vh;
+}
+
+#error {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 35vh;
+    height: 10vh;
+    width: 20vw;
+    background-color: #272727;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+    color: #AF001F;
+    display: none;
+}
+
+#closeError {
+    float: right;
+    color: #8F908A;
+}

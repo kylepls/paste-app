@@ -1,0 +1,163 @@
+extends layout
+
+block head
+  link(rel='stylesheet', href='/css/index.css')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js')
+  script(src='//code.jquery.com/jquery-1.10.2.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ext-language_tools.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js')
+  script(src='/js/map.js')
+  script.
+    var paste = !{JSON.stringify(paste).replace(/<\//g, "<\\/")}
+block content
+  #editor
+  #error
+    span
+      a#closeError(href='#') X
+    p An error has occurred while creating this paste
+    p#errorInfo Error info
+  #actions
+    a.tab#save(href='#') Save
+    a.tab#new(href='/') New
+    select(name='language')
+      option.auto(auto, selected='', value='text') Auto Detect
+      option(value='text') Text
+      option(value='abap') ABAP
+      option(value='abc') ABC
+      option(value='actionscript') ActionScript
+      option(value='ada') ADA
+      option(value='apache_conf') Apache Conf
+      option(value='asciidoc') AsciiDoc
+      option(value='assembly_x86') Assembly x86
+      option(value='autohotkey') AutoHotKey
+      option(value='batchfile') BatchFile
+      option(value='c_cpp') C and C++
+      option(value='c9search') C9Search
+      option(value='cirru') Cirru
+      option(value='clojure') Clojure
+      option(value='cobol') Cobol
+      option(value='coffee') CoffeeScript
+      option(value='coldfusion') ColdFusion
+      option(value='csharp') C#
+      option(value='css') CSS
+      option(value='curly') Curly
+      option(value='d') D
+      option(value='dart') Dart
+      option(value='diff') Diff
+      option(value='dockerfile') Dockerfile
+      option(value='dot') Dot
+      option(value='dummy') Dummy
+      option(value='dummysyntax') DummySyntax
+      option(value='eiffel') Eiffel
+      option(value='ejs') EJS
+      option(value='elixir') Elixir
+      option(value='elm') Elm
+      option(value='erlang') Erlang
+      option(value='forth') Forth
+      option(value='ftl') FreeMarker
+      option(value='gcode') Gcode
+      option(value='gherkin') Gherkin
+      option(value='gitignore') Gitignore
+      option(value='glsl') Glsl
+      option(value='gobstones') Gobstones
+      option(value='golang') Go
+      option(value='groovy') Groovy
+      option(value='haml') HAML
+      option(value='handlebars') Handlebars
+      option(value='haskell') Haskell
+      option(value='haxe') haXe
+      option(value='html') HTML
+      option(value='html_elixir') HTML (Elixir)
+      option(value='html_ruby') HTML (Ruby)
+      option(value='ini') INI
+      option(value='io') Io
+      option(value='jack') Jack
+      option(value='jade') Jade
+      option(value='java') Java
+      option(value='javascript') JavaScript
+      option(value='json') JSON
+      option(value='jsoniq') JSONiq
+      option(value='jsp') JSP
+      option(value='jsx') JSX
+      option(value='julia') Julia
+      option(value='latex') LaTeX
+      option(value='lean') Lean
+      option(value='less') LESS
+      option(value='liquid') Liquid
+      option(value='lisp') Lisp
+      option(value='livescript') LiveScript
+      option(value='logiql') LogiQL
+      option(value='lsl') LSL
+      option(value='lua') Lua
+      option(value='luapage') LuaPage
+      option(value='lucene') Lucene
+      option(value='makefile') Makefile
+      option(value='markdown') Markdown
+      option(value='mask') Mask
+      option(value='matlab') MATLAB
+      option(value='maze') Maze
+      option(value='mel') MEL
+      option(value='mushcode') MUSHCode
+      option(value='mysql') MySQL
+      option(value='nix') Nix
+      option(value='nsis') NSIS
+      option(value='objectivec') Objective-C
+      option(value='ocaml') OCaml
+      option(value='pascal') Pascal
+      option(value='perl') Perl
+      option(value='pgsql') pgSQL
+      option(value='php') PHP
+      option(value='powershell') Powershell
+      option(value='praat') Praat
+      option(value='prolog') Prolog
+      option(value='properties') Properties
+      option(value='protobuf') Protobuf
+      option(value='python') Python
+      option(value='r') R
+      option(value='razor') Razor
+      option(value='rdoc') RDoc
+      option(value='rhtml') RHTML
+      option(value='rst') RST
+      option(value='ruby') Ruby
+      option(value='rust') Rust
+      option(value='sass') SASS
+      option(value='scad') SCAD
+      option(value='scala') Scala
+      option(value='scheme') Scheme
+      option(value='scss') SCSS
+      option(value='sh') SH
+      option(value='sjs') SJS
+      option(value='smarty') Smarty
+      option(value='snippets') snippets
+      option(value='soy_template') Soy Template
+      option(value='space') Space
+      option(value='sql') SQL
+      option(value='sqlserver') SQLServer
+      option(value='stylus') Stylus
+      option(value='svg') SVG
+      option(value='swift') Swift
+      option(value='tcl') Tcl
+      option(value='tex') Tex
+      option(value='text') Text
+      option(value='textile') Textile
+      option(value='toml') Toml
+      option(value='twig') Twig
+      option(value='typescript') Typescript
+      option(value='vala') Vala
+      option(value='vbscript') VBScript
+      option(value='velocity') Velocity
+      option(value='verilog') Verilog
+      option(value='vhdl') VHDL
+      option(value='wollok') Wollok
+      option(value='xml') XML
+      option(value='xquery') XQuery
+      option(value='yaml') YAML
+      option(value='django') Django
+  #menus
+    #find
+      p Find text...
+      form
+        input(type='text')
+        button(type='submit') Find
+block end
+  script(src='/js/index.js')

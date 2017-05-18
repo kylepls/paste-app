@@ -1,0 +1,17 @@
+extends layout
+
+block head
+  link(rel='stylesheet', href='/css/index.css')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js')
+  script(src='/js/map.js')
+  script.
+    var paste = !{JSON.stringify(paste).replace(/<\//g, "<\\/")}
+block content
+  #editor
+  #actions
+    a.tab#new(href='/') New
+    a.tab#raw(href='/#{paste._id}/raw') Raw
+    a.tab#raw(href='/n/#{paste._id}') Clone
+block end
+  script(src='/js/view.js')
