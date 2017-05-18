@@ -1,5 +1,5 @@
 # paste-app
-Simple hastebin ripoff using Ace editor
+Simple HasteBin ripoff using Ace editor
 
 Features:
   - Caching of frequent requests
