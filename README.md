@@ -8,4 +8,4 @@ Features:
   - ShareX compatability
   - Simple configuration
 
-![Preview](http://i.imgur.com/R158AXA.png)
+![Preview](http://i.imgur.com/8b4JFCO.png)
